@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <script src="scripts/jquery.js"></script>
+        <script src="scripts/jqueryui.js"></script>
+        <script src="scripts/stackGrid.js"></script>
+        <link rel="stylesheet" href="css/jqueryui.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" crossorigin="anonymous">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #origin
+{
+  background-color: #efefef;
+  min-width: 35%;
+  min-height: 400px;
+}
+
+#origin img, #drop img {
+  margin-top: 3px;
+  margin-left: 5px;
+}
+
+#drop
+{
+  background-color: #29e;
+  min-width:100%;
+  min-height: 400px;
+}
+.over {
+  border: solid 5px purple;
+}
+.draggable .draggable-content
+{
+  border: solid 2px gray;
+  padding:20px;
+  height:100%;
+}
+.draggable {
+  float:left;
+  margin:10px 5px;
+}
+.form-container {
+    min-width:75%;
+    background:#EFEFEF;
+    float:left;
+}
+.be-wrapper {
+    max-width:1170px;
+    display:flex;
+    margin:0 auto;
+}
+.be-content {
+    width:100%;
+}
+        </style>    
+    </head>
+    <body>
+        
+        <div class="be-wrapper be-fixed-sidebar">
+      
+      
+      <div class="be-content">
+        <div class="main-content container-fluid">
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <form>
+                  <label>search</label>
+                  <input type="text" name="search" />
+                  <label>name</label>
+                  <input type="text" name="search" />
+                  <label>email</label>
+                  <input type="text" name="search" />
+              </form>    
+            </div>
+            <div class="col-12 col-lg-6">
+              <div id="origin" class="fbox">
+                        <!--<div class="draggable changesize" data-report=1><div class="draggable-content">Report1</div></div>
+                        <div class="draggable changesize" data-report=2><div class="draggable-content">Report2</div></div>
+                        <div class="draggable changesize" data-report=3><div class="draggable-content">Report3</div></div>-->
+                        <div class="draggable changesize" data-report=1><div class="draggable-content">Report1</div></div>
+                        <div class="draggable changesize" data-report=2><div class="draggable-content">Report2</div></div>
+                        <div class="draggable changesize" data-report=3><div class="draggable-content">Report3</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">  
+              <div class="col-12">
+              <div id="drop" class="fbox">
+                        
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+        <script>
+            $(document).ready(function() {
+                var stackgrid = new stackGrid(
+                                    { 
+                                        originHandle : "#origin",
+                                        dropHandle : "#drop",
+                                        resizeHandle: ".changesize",
+                                        aspectRatio: "16 / 9",
+                                        grid : 95
+                                    }
+                                );
+                stackgrid.sortgrids();
+            });
+        </script>    
+    </body>
+</html>
